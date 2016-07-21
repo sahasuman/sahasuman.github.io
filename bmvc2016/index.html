@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> BMVC2016-publication: Deep Learning for Detecting Multiple Space-Time Action Tubes in Videos   </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/1-col-portfolio.css" rel="stylesheet">
+    
+     <!-- sidebar menu  downloaded from: http://startbootstrap.com/template-overviews/simple-sidebar/ -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+           <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <!--<li>
+                        <a href="http://sahasuman.bitbucket.org">Home</a>
+                    </li>-->
+                     <li>  <a href="#bmvc2016-home">Home</a>  </li>
+		    <!--<li>  <a href="#abstract">Abstract</a>  </li>-->		    
+		    <li>  <a href="#overview">Overview</a>  </li>
+		    <li>  <a href="#publication">Related Publication</a>
+		    <li>  <a target="_blank" href="https://bitbucket.org/sahasuman/bmvc2016_code">Code</a>  </li>
+		    <li>  <a href="#qty-res">Results</a> </li> 
+		    <!--<li>  <a href="#video">Video</a> </li>       
+		    <li>  <a href="#qty-res"> Quantitative Results</a> </li>
+		    <li>  <a href="#visual-results">Visual Results</a>  </li>
+		    <li>  <a href="#sup1"> RPN Recall-vs-IoU </a> </li>
+		    <li>  <a href="#sup2">  Ablation Study </a> </li>
+		    <li>  <a href="#sup3">  Label smoothing and mAP </a> </li>
+		    <li>  <a href="#sup4">  Train/Test Computing Time </a> </li>-->
+		    
+		    <!-- Home - Overview - Related Publication - Code - Results -->
+                   
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+         <!-- Page Heading -->
+       <!-- <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                <a name="bmvc2016-home">                
+                Deep Learning for Detecting Multiple Space-Time Action Tubes in Videos  
+                </a>
+                </h1>
+            </div>
+        </div>-->
+        <!-- /.row -->
+	
+		<h1>
+                <a name="bmvc2016-home">
+                <!--<br><br><br>-->
+                Deep Learning for Detecting Multiple Space-Time Action Tubes in Videos  
+                </a>
+                </h1>
+    
+        <!-- Project One -->
+        <div class="row">        
+        <!-- sidebar navigation meny -->
+	 <!-- <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">   
+	      <li>  <a href="#bmvc2016-home">Project Home</a>  </li>
+	      <li>  <a href="#abstract">Abstract</a>  </li>
+	      <li>  <a href="#publication">Related Publication</a>  </li>
+	       <li>  <a href="#overview">Overview of the Approach</a>  </li>	      
+	      <li>  <a target="_blank" href="https://bitbucket.org/sahasuman/bmvc2016_code">Code</a>  </li>
+	      <li>  <a href="#video">Video</a> </li>       
+	      <li>  <a href="#qty-res"> Quantitative Results</a> </li>
+              <li>  <a href="#visual-results">Visual Results</a>  </li>
+              <li>  <a href="#sup1"> RPN Recall-vs-IoU </a> </li>
+              <li>  <a href="#sup2">  Ablation Study </a> </li>
+              <li>  <a href="#sup3">  Label smoothing and mAP </a> </li>
+              <li>  <a href="#sup4">  Train/Test Computing Time </a> </li>
+                       
+            </ul>
+	  </div>-->
+	   <!-- intro teaser image -->
+            <div class="col-md-12">		    
+                    <img class="img-responsive" src="imgs/intro-new.png" alt="">  
+                    <p>             
+              Action tube detection in a `biking' video taken from UCF-101 dataset. 
+               The detection boxes in each frame are linked up to form space-time action tubes.
+             <!-- (a) Side view of the detected action tubes where each colour represents a particular instance.             
+              (b) Illustration of the ground-truth temporal duration for comparison.-->              
+              (a) Viewing the video as a 3D volume with selected image frames;
+              notice that we are able to detect multiple action instances in both space and time.
+	      (b) Top-down view.
+	      Our method can detect several (more than 2) action instances concurrently, as shown in the above Fig.
+		  </p>
+		 <!-- <a name="video"> <h3> Video </h3> </a>
+		  <iframe width="500" height="315" src="https://www.youtube.com/embed/WjFssjVKUPc"> </iframe> -->
+		  		                  
+            </div>
+         </div> 
+      
+        <div class="row">
+            <div class="col-md-6">
+                <a name="video"> <h3> Video </h3> </a>                
+		  <iframe width="500" height="315" src="https://www.youtube.com/embed/vBZsTgjhWaQ"> </iframe> 
+            </div>
+            <div class="col-md-6">
+                 <h3>
+                <a name="abstract">                
+                Abstract
+                </a>
+                </h3>
+                <p align="justify">                
+                In this work we propose a new approach to the spatiotemporal localisation (detection) and classification of multiple concurrent actions within
+		temporally untrimmed videos.
+		Our framework is composed of three stages.
+		In stage 1, a cascade of deep region proposal and detection networks are employed to classify regions of each video frame potentially containing an action of interest.
+		In stage 2, appearance and motion cues are combined by merging the detection boxes and softmax classification scores generated by the two cascades.
+		In stage 3, sequences of detection boxes most likely to be associated with a single action instance, called {action tubes},
+		are constructed by solving two optimisation problems via dynamic programming.
+		While in the first pass action paths spanning the whole video are built by linking detection boxes over time using their class-specific scores
+		and their spatial overlap,
+		in the second pass temporal trimming is performed by ensuring label consistency for all constituting detection boxes.
+		We demonstrate the performance of our algorithm on the challenging UCF101, J-HMDB-21 and LIRIS-HARL datasets,
+		achieving new state-of-the-art results across the board
+		and significantly lower detection latency at test time.	
+		</p>
+               
+            </div>
+        </div>
+        
+       
+
+        <!-- Project Two -->
+       <!-- <div class="row">            
+            <div class="col-md-12">
+                <h3>
+                <a name="abstract">                
+                Abstract
+                </a>
+                </h3>
+                <p style="text-align:justify;">               
+                In this work we propose a new approach to the spatiotemporal localisation (detection) and classification of multiple concurrent actions within
+		temporally untrimmed videos.
+		Our framework is composed of three stages.
+		In stage 1, a cascade of deep region proposal and detection networks are employed to classify regions of each video frame potentially containing an action of interest.
+		In stage 2, appearance and motion cues are combined by merging the detection boxes and softmax classification scores generated by the two cascades.
+		In stage 3, sequences of detection boxes most likely to be associated with a single action instance, called {action tubes},
+		are constructed by solving two optimisation problems via dynamic programming.
+		While in the first pass action paths spanning the whole video are built by linking detection boxes over time using their class-specific scores
+		and their spatial overlap,
+		in the second pass temporal trimming is performed by ensuring label consistency for all constituting detection boxes.
+		We demonstrate the performance of our algorithm on the challenging UCF101, J-HMDB-21 and LIRIS-HARL datasets,
+		achieving new state-of-the-art results across the board
+		and significantly lower detection latency at test time.		
+                </p>
+             </div>
+        </div>-->
+         
+         <hr>
+         
+          <div class="row">            
+            <div class="col-md-12">
+               
+                <h3>
+                <a name="publication">                
+                Related Publication:
+                </a>
+                </h3>
+                 <h4>
+                Deep Learning for Detecting Multiple Space-Time Action Tubes in Videos, British Machine Vision Conference (BMVC)  2016.       
+                </h4>
+                <h4>        
+                 <a href="http://sahasuman.bitbucket.org"> Suman Saha</a>,
+                 <a href="http://gurkirt.github.io/">Gurkirt Singh</a>, 
+                 <a href="https://sites.google.com/site/mikesapi/">Michael Sapienza</a>,
+                 <a href="http://www.robots.ox.ac.uk/~tvg/"> Philip H. S. Torr </a>,
+                 <a href="http://cms.brookes.ac.uk/staff/FabioCuzzolin/">Fabio Cuzzolin.</a>
+                </h4>                
+                <!-- <a href="#"> bibtex </a> |  -->              
+                <!-- <a href="#"> paper </a> | -->
+                <!-- <a href="#"> suplementary material </a> | -->
+                <a href="https://bitbucket.org/sahasuman/bmvc2016_code" name="code"> code </a> | 
+                <a href="#video"> video </a>
+            </div>
+        </div>
+        
+          <hr>
+         
+         <div class="row">            
+            <div class="col-md-12">  
+            <a name="overview">
+            <br><br><br>
+             <h3>Overview of the spatio-temporal action localisation pipeline</h3>
+             </a>
+              <img class="img-responsive" src="imgs/bmvc2016.png" alt="">
+              <p>
+              At test time, (a) RGB and flow images are passed to
+    (b) two separate region proposal networks (RPNs).
+    (c) Each network outputs region proposals with associated actionness scores.
+    (d) Each appearance/flow detection network takes as input the relevant image and RPN-generated region proposals, and
+    (e) outputs detection boxes and softmax probability scores.
+    (f) Spatial and flow detections are fused and
+    (g) linked up to generate class-specific action paths spanning the whole video.
+    (h) Finally the action paths are temporally trimmed to form action tubes.
+              </p>
+	    </div>
+	</div>	 
+	
+	
+        
+        <hr>
+         <div>
+         <h3>
+         <a name="qty-res"> 
+         <br><br><br> 
+         Quantitative action detection results: 
+         </a>         
+         </h3>
+         </div>
+         <br>        
+	  <div class="row">            
+            <div class="col-md-12">          
+              <img class="img-responsive" src="imgs/tables1-4.png" alt="">              
+	  </div>
+	</div>
+	
+	       
+        <div>
+        <br>
+         <p> Note that the reference numbers are in line with our <a href="#publication"> BMVC2016 paper.</a> <p>
+        </div>
+        <hr>
+        <div> 
+        <h3>
+        <a name="visual-results">                 
+        Visual results        
+        </a>
+        </h3>
+        </div>
+         
+         <div class="row">            
+            <div class="col-md-12">            
+             <h4>Action detection/localisation results on UCF101 dataset</h4>
+              <img class="img-responsive" src="imgs/ucf101-1.png" alt="">  
+              <p>
+              Ground-truth boxes are in green, detection boxes in red. The top row shows correct detections, the bottom one contains examples of more mixed results. In the last frame, 3 out of 4 
+	      `Fencing' instances are nevertheless correctly detected.
+              </p>
+	    </div>
+        </div>
+        
+         <hr>
+         
+          <div class="row">            
+            <div class="col-md-12">            
+             <h4>Sample space-time action localisation results on JHMDB-21 dataset</h4>
+              <img class="img-responsive" src="imgs/jhmdb-21.png" alt="">  
+              <p>
+              Left-most three frames: accurate detection examples. Right-most three frames: mis-detection examples.
+              </p>
+	    </div>
+        </div>
+        
+         <hr>
+         
+           <div class="row">            
+            <div class="col-md-12">            
+             <h4>Sample space-time action localisation results on LIRIS-HARL dataset</h4>
+              <img class="img-responsive" src="imgs/liris.png" alt="">  
+              <p>
+              Frames from the space-time action detection results on LIRIS-HARL, some of which include single actions involving more than one person like ‘handshaking’ and ‘discussion’.
+              Left-most 374 three frames: accurate detection examples. Right-most three frames: mis-detection examples.
+              </p>
+	    </div>
+        </div>
+        
+         <hr>
+         
+         <div class="row">            
+            <div class="col-md-12">            
+             <h4>Sample spatio-temporal localisation results on UCF-101</h4>
+              <img class="img-responsive" src="imgs/ucf101-supl-res.png" alt="">  
+              <p>
+              Each row represents a  UCF-101 test video clip. Ground-truth bounding boxes are in green, detection boxes in red.
+              </p>
+	    </div>
+        </div>
+        
+        <hr>
+        
+        <div class="row">            
+            <div class="col-md-12">            
+             <h3>
+             <a name="sup1">             
+             Selective Search vs RPN action proposals
+             </a>
+             </h3>
+              <img class="img-responsive" src="imgs/sup-1.png" alt="">  
+              <p>
+             Performance comparison between Selective Search (SS) and RPN-based region proposals on four groups of action classes (vertical columns) in UCF-101. Top row: recall vs. IoU curve for SS. 
+Bottom row: results for RPN-based region proposals.
+             </p>
+	    </div>
+        </div>
+        
+        <hr>
+        
+         <div class="row">            
+            <div class="col-md-12">            
+             <h3>
+             <a name="sup2">            
+              An ablation study of the spatio-temporal detection results (mAP) on UCF-101.
+             </a>
+             </h3>
+              <img class="img-responsive" src="imgs/sup-2.png" alt="">                
+	    </div>
+        </div>
+        
+        <hr>
+        
+         <div class="row">            
+            <div class="col-md-12">            
+             <h3>
+             <a name="sup3">             
+              Impact of label smoothing on detection performance (mAP) on UCF-101.
+             </a>
+             </h3>
+              <img class="img-responsive" src="imgs/sup-3.png" alt="">  
+              
+	    </div>
+        </div>
+        
+        <hr>
+        
+         <div class="row">            
+            <div class="col-md-12">            
+             <h3>
+             <a name="sup4">             
+              Train/Test Computing Time
+             </a>
+             </h3>
+              <img class="img-responsive" src="imgs/sup-4.png" alt="">  
+               <p> Note: that the reference numbers are in line with our <a href="#publication"> BMVC2016 suplementary material.</a> <p>
+        
+	    </div>
+        </div>
+      <!-- Footer -->  
+     <br><br><br><br> 
+     <hr>
+     <hr>
+     
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                    Webpage designed by <a href="http://getbootstrap.com/2.3.2/index.html"> Bootstrap </a>.
+                    </p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+      
+    
+     <div style="text-align:center;"><script type="text/javascript" src="http://services.webestools.com/cpt_visitors/40087-10-9.js"></script></div>
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    
+</body>
+
+</html>
