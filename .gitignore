@@ -1,0 +1,8 @@
+*.svg
+*.txt~
+svg_backup/*.svg
+svg_backup/*.png
+accv2016/
+*.kate-swp
+brookes/*.svg
+icvss2015/*.svg
