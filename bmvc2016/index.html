@@ -251,7 +251,25 @@
          </a>         
          </h3>
          </div>
+         
          <br>  
+         
+         
+          <div class="row">
+          <h5><b>References</b></h5>
+	     <ul>
+	      <li>
+	      
+    For UCF101, we noticed that the optical flow based RPN and Fast-RCNN models trained using VGG-16 image-mean [123.6800, 116.7790, 103.9390] perform better than the flow models trained using flow image-mean [128.00, 128.00, 128.00]. For this reason, we trained our UCF101 flow-based RPN and Fast-RCNN networks using VGG-16 image-mean.
+
+	      </li>
+	      <li>
+	    <b> New:</b>
+    There was a minor bug in the second pass DP code used for temporal trimming of action paths. We corrected the code and generated the evaluation results again on UCF-101 test spli1. As the videos of J-HMDB-21 are temporally trimmed, there is no need to generate the results again. The new evaluation results are shown in the table below. The new figures are almost the same as earlier results.
+	      </li>
+	      
+	      </ul> 
+         </div>
          
          <div class="row">
          <h4> <a> Table 1: Quantitative action detection results (mAP) on the UCF-101 dataset. </a></h4>
@@ -296,35 +314,35 @@
 	       <!-- table row -->
 	     <tr>
 	      <td>Our (appearance detection model)</td>
-	      <td>68.74</td>
-	      <td>66.13</td>
-	      <td>56.91</td>
-	      <td>48.28</td>
-	      <td>39.10</td>
-	      <td>30.67</td>
-	      <td>22.77</td>	      
+	      <td>67.56</td>
+	      <td>65.45</td>
+	      <td>56.55</td>
+	      <td>48.52</td>
+	      <td>39.00</td>
+	      <td>30.64</td>
+	      <td>22.89</td>	      
 	      </tr>
 	       <!-- table row -->
 	     <tr>
 	      <td>Our (motion detection model)</td>
-	      <td>67.04</td>
-	      <td>64.86</td>
-	      <td>57.33</td>
-	      <td>47.45</td>
-	      <td>38.65</td>
-	      <td>28.90</td>
-	      <td>19.49</td>	      
+	      <td>65.19</td>
+	      <td>62.94</td>
+	      <td>55.68</td>
+	      <td>46.32</td>
+	      <td>37.55</td>
+	      <td>27.84</td>
+	      <td>18.75</td>	      
 	      </tr>
 	        <!-- table row -->
 	     <tr  style="border-bottom: 2px solid">
 	      <td><b>Our (appearance + motion fusion)</b></td>
-	      <td><b> 79.12</b></td>
-	      <td><b> 76.57</b></td>
-	      <td><b> 66.75</b></td>
-	      <td><b> 55.46</b></td>
-	      <td><b> 46.35</b></td>
-	      <td><b> 35.86</b></td>
-	      <td><b> 26.79</b></td>	     	         
+	      <td><b> 78.85</b></td>
+	      <td><b> 76.12</b></td>
+	      <td><b> 66.36</b></td>
+	      <td><b> 54.93</b></td>
+	      <td><b> 45.24</b></td>
+	      <td><b> 34.82</b></td>
+	      <td><b> 25.86</b></td>	     	         
 	      </tr>
 	      </tbody>
 	    </table>
