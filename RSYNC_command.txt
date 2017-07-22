@@ -1,0 +1,2 @@
+rsync -avzh --exclude .git/ .gitignore /home/suman/Code/sahasuman.bitbucket.io/ /home/suman/Code/sahasuman.github.io/
+# sync the contents of bitbucekt to github exculding .git and .gitignore folders
