@@ -1,3 +1,5 @@
+.idea/*
+venv/*
 bibtex/*.txt~
 Msc2014/imgs/*.svg
 cvpr2016/*.svg
